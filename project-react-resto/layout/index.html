@@ -77,6 +77,7 @@
           document.querySelector("#out").innerHTML = tampil;
         });
       }
+
       function show() {
         let id = 6;
         link.get("/pelanggan/" + id).then((res) => {
@@ -101,8 +102,48 @@
           document.querySelector("#out").innerHTML = tampil;
         });
       }
+
+      function post() {
+        let data = {
+          pelanggan: "pelanggan axios",
+          alamat: "alamat axios",
+          telp: "0938393",
+        };
+        link.post("/pelanggan", data).then((res) => {
+          // console.log(res);
+          let tampil = `<h1>${res.data.pesan}</h1>`;
+          document.querySelector("#out").innerHTML = tampil;
+        });
+      }
+
+      function hapus() {
+        let id = 10;
+        link.delete("/pelanggan/" + id).then((res) => {
+          console.log(res);
+          let tampil = `<h1>${res.data.pesan}</h1>`;
+          document.querySelector("#out").innerHTML = tampil;
+        });
+      }
+
+      function ubah() {
+        let id = 11;
+        let data = {
+          pelanggan: "update axios",
+          alamat: "update axios",
+          telp: 08773820,
+        };
+        link.put("/pelanggan/" + id, data).then((res) => {
+          console.log(res);
+          let tampil = `<h1>${res.data.pesan}</h1>`;
+          document.querySelector("#out").innerHTML = tampil;
+        });
+      }
+
       document.querySelector("#get").addEventListener("click", get);
       document.querySelector("#show").addEventListener("click", show);
+      document.querySelector("#post").addEventListener("click", post);
+      document.querySelector("#del").addEventListener("click", hapus);
+      document.querySelector("#update").addEventListener("click", ubah);
     </script>
   </body>
 </html>
