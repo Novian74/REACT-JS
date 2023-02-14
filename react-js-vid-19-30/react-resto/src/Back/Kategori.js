@@ -22,7 +22,7 @@ const Kategori = () => {
             setPilihan(true);
         }
         reset();
-        fetchData();
+        // fetchData();
     }
 
     async function hapus(id) {
@@ -40,11 +40,11 @@ const Kategori = () => {
         setPilihan(false);
     }
 
-    fetchData();
+    // fetchData();
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [isi]);
 
     let no = 1;
 
