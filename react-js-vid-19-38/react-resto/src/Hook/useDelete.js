@@ -10,7 +10,7 @@ const useDelete = (url) => {
             setPesan(res.data.pesan);
         }
     }
-    return { hapus, pesan };
+    return { hapus, pesan, setPesan };
 }
 
 export default useDelete;
