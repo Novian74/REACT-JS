@@ -4,7 +4,7 @@ import Main from './Main';
 import Nav from './Nav';
 import Side from './Side';
 
-const Back = () => {
+const Front = () => {
     return (
         <>
             <div className="row">
@@ -12,7 +12,7 @@ const Back = () => {
             </div>
             <div className="row">
                 <div className='col-4'><Side /></div>
-                <div className='col-8'><Main /></div>
+                <div className='col-4'><Main /></div>
             </div>
             <div className="row">
                 <div><Footer /></div>
@@ -21,4 +21,4 @@ const Back = () => {
     );
 }
 
-export default Back;
+export default Front;
